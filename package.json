@@ -1,0 +1,24 @@
+{
+  "name": "aqarnftoken",
+  "version": "1.0.0",
+  "description": "non-fungible (ERC-721) tokens exchanger with zkSNARKs implementation",
+  "main": "./",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khalidfsh/AqarNFToken.git"
+  },
+  "author": "Khalid F.SH <dev.khalid@me.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khalidfsh/AqarNFToken/issues"
+  },
+  "homepage": "https://github.com/khalidfsh/AqarNFToken#readme",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.2.0",
+    "solc": "^0.5.2",
+    "solc-js": "^0.5.2"
+  }
+}
