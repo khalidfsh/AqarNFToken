@@ -1,8 +1,10 @@
 // migrating the appropriate contracts
-//var SquareVerifier = artifacts.require("./SquareVerifier.sol");
-//var SolnSquareVerifier = artifacts.require("./SolnSquareVerifier.sol");
+var Verifier = artifacts.require("Verifier");
+var SolnSquareVerifier = artifacts.require("./SolnSquareVerifier.sol");
 
-module.exports = function(deployer) {
-  //deployer.deploy(SquareVerifier);
-  //deployer.deploy(SolnSquareVerifier);
+module.exports = async function(deployer) {
+  await deployer.deploy(Verifier);
+  const verifierContract = await Verifier.deployed();
+
+  await deployer.deploy(SolnSquareVerifier, verifierContract.address);
 };
