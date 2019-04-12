@@ -1,4 +1,5 @@
 eth-project/build/
+.secret
 # Logs
 logs
 *.log

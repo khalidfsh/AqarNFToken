@@ -512,6 +512,18 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 
     // TODO: create external getter functions for name, symbol, and baseTokenURI
 
+    function name() external view returns(string memory){
+        return _name;
+    }
+
+    function symbol() external view returns(string memory){
+        return _symbol;
+    }
+
+    function baseTokenURI() external view returns(string memory){
+        return _baseTokenURI;
+    }
+
     function tokenURI(uint256 tokenId) external view returns (string memory) {
         require(_exists(tokenId));
         return _tokenURIs[tokenId];
@@ -545,8 +557,8 @@ contract AqarERC721MintableToken is ERC721Metadata {
         public
         ERC721Metadata(
             "Aqar Real Estate Exchange", 
-            "AQRE",
-            "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/"
+            "AQAR",
+            "https://aqarnft.herokuapp.com/api/token/"
         )
     {
     }

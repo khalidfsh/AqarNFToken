@@ -32,7 +32,7 @@ contract('TestERC721Mintable', accounts => {
 
         // token uri should be complete i.e: https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/1
         it('should return token uri', async function () { 
-            let expictedTokenURI = "https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/1";
+            let expictedTokenURI = "https://aqarnft.herokuapp.com/api/token/";
             let testedTokenURI = await this.contract.tokenURI(1);
 
             assert.equal(testedTokenURI, expictedTokenURI);
