@@ -10,7 +10,7 @@ const tokenId = argv[0];
 const to = argv[1];
 
 (async() => {
-  const provider = await new HDWalletProvider(secret.mnemonic, `https://rinkeby.infura.io/v3/${secret.infuraKey}`, 1);
+  const provider = await new HDWalletProvider(secret.mnemonic, `https://rinkeby.infura.io/v3/${secret.infuraKey}`, 0);
   const web3 = await new Web3(provider);
   const erc721Aqar = await new web3.eth.Contract(contractFile.abi, contractAddresses.erc721, { gasLimit: "3000000" });
   const accounts = await web3.eth.getAccounts();
