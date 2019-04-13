@@ -30,7 +30,7 @@ OpenSea Marketplace Storefront link's: [Aqar Real Estate Exchange](https://rinke
 
 ### Token:
 Contract address: [0x1b031B79727d8Dad0bc55D0d97082d47a5e94bEA](https://rinkeby.etherscan.io/address/0x1b031B79727d8Dad0bc55D0d97082d47a5e94bEA)   
-Contract abi's: [/eth-project/build/contracts/Verifier.json](./eth-project/build/contracts/Verifier.json)
+Contract abi's: [/eth-project/build/contracts/SolnSquareVerifier.json](./eth-project/build/contracts/SolnSquareVerifier.json)
 ### Verifier:
 Contract address: [0xC0eacA14c6D3dD8FED326eBcf99A0C557789EB3d](https://rinkeby.etherscan.io/address/0xC0eacA14c6D3dD8FED326eBcf99A0C557789EB3d)  
 Contract abi's: [/eth-project/build/contracts/Verifier.json](./eth-project/build/contracts/Verifier.json)
@@ -86,11 +86,11 @@ update <**your infura key**> and <**your mnemonic words**> in
 `/eth-project/scripts/secret.json` before start minting,    
 In directory `/eth-project/scripts`, run:
 
-#### Submit new solution
+#### Submit new solution for tokenId
 ```
 node submit-sol.js <proof.json file location> <tokenId>
 ```
-#### Submit new solution
+#### Mint new token for tokenId
 ```
 node mint.js <tokenId>
 ```
