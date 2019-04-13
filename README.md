@@ -1,3 +1,5 @@
+[![Udacity - Blockchain Developer Nanodegree](https://bit.ly/2svzNOI)](https://www.udacity.com/blockchain)
+
 # AQAR Real Estate Exchange
 
 AQAR Real Estate Exchange is the capstone project for Udacity's Blockchain course. 
