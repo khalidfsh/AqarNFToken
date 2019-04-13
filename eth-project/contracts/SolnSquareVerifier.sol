@@ -51,9 +51,12 @@ contract SolnSquareVerifier is AqarERC721MintableToken {
     ) 
         public 
     {
+        require(tokenId != 0, "tokenId should be more than 0");
         require(solutionsKeys[tokenId] == bytes32(0), "tokenId: has solution");
         require(verifier.verifyTx(a, a_p, b, b_p, c, c_p, h, k, input), "incorrect proof input");
+
         bytes32 solutionKey = keccak256(abi.encodePacked(a, a_p, b, b_p, c, c_p, h, k, input));
+        require(solutions[solutionKey].tokenId == 0, "solution already used");
 
         solutionsKeys[tokenId] = solutionKey;
         solutions[solutionKey].owner = account;

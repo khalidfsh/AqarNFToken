@@ -10,12 +10,12 @@ To install, download or clone the repo, then:
 
 `npm install`
 
-In directory `eth-contracts/`  
+In directory `eth-project/`  
 `truffle compile`
 
 ## Tests
 To run truffle tests:
-In directory `eth-contracts/`
+In directory `eth-project/`
 
 For all tests:    
 `truffle test` 
@@ -26,9 +26,14 @@ For single file tests:
 `truffle test test/TestSolnSquareVerifier.js`  
 
 ## Addresses and Links 
-Contract address (Token) : [0xD2813cb5680111A8Eb5650e7d468Be16C4021a84](https://rinkeby.etherscan.io/address/0xd2813cb5680111a8eb5650e7d468be16c4021a84)  
-Contract address (Verifier): [0x5b1a9A39B9eF0B623AE45B210c1630dE93122997](https://rinkeby.etherscan.io/address/0x5b1a9A39B9eF0B623AE45B210c1630dE93122997)  
-OpenSea Marketplace Storefront link's: [Aqar Real Estate Exchange](https://rinkeby.opensea.io/category/aqarrealestateexchangev2)
+OpenSea Marketplace Storefront link's: [Aqar Real Estate Exchange](https://rinkeby.opensea.io/category/aqarrealestateexchangev3)
+
+### Token:
+Contract address: [0x1b031B79727d8Dad0bc55D0d97082d47a5e94bEA](https://rinkeby.etherscan.io/address/0x1b031B79727d8Dad0bc55D0d97082d47a5e94bEA)   
+Contract abi's: [/eth-project/build/contracts/Verifier.json](./eth-project/build/contracts/Verifier.json)
+### Verifier:
+Contract address: [0xC0eacA14c6D3dD8FED326eBcf99A0C557789EB3d](https://rinkeby.etherscan.io/address/0xC0eacA14c6D3dD8FED326eBcf99A0C557789EB3d)  
+Contract abi's: [/eth-project/build/contracts/Verifier.json](./eth-project/build/contracts/Verifier.json)
 
 ## ZoKrates (generate zk-Snarks Validator)
 #### Step 1: Run ZoKrates in Docker
@@ -66,32 +71,35 @@ cd code/zokrates/code/square/
 ../../../../zokrates export-verifier
 ```
 
-# Deploy to Rinkeby
+## Deploy to Rinkeby
 Update <**your infura key**> in 
-`/eth-contracts/truffle-config.js` before migrate to Rinkeby Network. 
-And create a `.secret` file in `/eth-contracts/` with your mnemonic.
+`/eth-project/truffle-config.js` before migrate to Rinkeby Network. 
+And create a `.secret` file in `/eth-project/` with your mnemonic.
 
-Example `.secret` content:
-```
-make soup average fence better canvas house like mystery happy holiday
-``` 
- 
 Start deployment
 ```
 truffle migrate --network rinkeby
 ```
 
-#Minting tokens
-Update <**your infura key**> and <**your mnemonic words**> in 
-`/eth-contracts/scrippts/mint.js` before start minting 
+### Minting tokens Process
+update <**your infura key**> and <**your mnemonic words**> in 
+`/eth-project/scripts/secret.json` before start minting,    
+In directory `/eth-project/scripts`, run:
+
+#### Submit new solution
 ```
-node scripts/mint.js
+node submit-sol.js <proof.json file location> <tokenId>
+```
+#### Submit new solution
+```
+node mint.js <tokenId>
 ```
 
-#Token Metadata
+## Token Metadata
 Aqar metadata api project: [aqarnft-meadata](https://github.com/khalidfsh/aqarnft-metadata)
 using this [startup code](https://github.com/ProjectOpenSea/metadata-api-nodejs)
-# Project Resources
+
+## Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -102,7 +110,7 @@ using this [startup code](https://github.com/ProjectOpenSea/metadata-api-nodejs)
 * [Docker](https://docs.docker.com/install/)
 * [ZoKrates](https://github.com/Zokrates/ZoKrates)
 
-# Known Bugs / Improvements
+## ZoKrates Improvements
 squares as input to ZoKrates is not directly related to the real estate property use case. 
 It is just meant to show how the process can be done programmatically. 
 There might be other data that can be input to ZoKrates to verify land titles.

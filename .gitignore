@@ -1,4 +1,4 @@
-eth-project/build/
+##eth-project/build/
 .secret
 # Logs
 logs

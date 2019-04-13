@@ -6,7 +6,7 @@ const ZokratesProof = require("../../zokrates/code/square/proofs/main/proof.json
 contract("SolnSquareVerifier", accounts => {
     const deployerAccount = accounts[0];
     const token = {
-        id: '0',
+        id: '1',
         owner: accounts[1],
     };
 
@@ -35,6 +35,34 @@ contract("SolnSquareVerifier", accounts => {
         }
 
         assert(success)
+    });
+
+    it("new solution cannot be added if the proof was used previously", async() => {
+        let success = false;
+
+        try {
+            await this.contract.submitSolution(
+                ...Object.values(ZokratesProof.proof), 
+                ZokratesProof.input,
+                token.owner,
+                token.id,
+                { from: token.owner }
+            );
+
+            await this.contract.submitSolution(
+                ...Object.values(ZokratesProof.proof), 
+                ZokratesProof.input,
+                token.owner,
+                2,
+                { from: token.owner }
+            );
+            
+            success = true;
+        } catch(e) {
+            success = false
+        }
+
+        assert(!success)
     });
 
 // Test if an ERC721 token can be minted for contract - SolnSquareVerifier
