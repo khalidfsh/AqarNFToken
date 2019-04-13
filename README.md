@@ -50,27 +50,27 @@ cd code/zokrates/code/square/
 
 #### Step 2: Compile the program written in ZoKrates DSL
 ``` 
-../../../../zokrates compile -i square.code
+~/zokrates compile -i square.code
 ``` 
 
 #### Step 3: Generate the Trusted Setup
 ``` 
-../../../../zokrates setup
+~/zokrates setup
 ```
 
 #### Step 4: Compute Witness
 ``` 
-../../../../zokrates compute-witness -a 3 9
+~/zokrates compute-witness -a 3 9
 ```
 
 #### Step 5: Generate Proof
 ```
-../../../../zokrates generate-proof
+~/zokrates generate-proof
 ```
 
 #### Step 6: Export Verifier
 ```  
-../../../../zokrates export-verifier
+~/zokrates export-verifier
 ```
 
 ## Deploy to Rinkeby
