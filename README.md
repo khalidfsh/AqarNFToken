@@ -2,7 +2,7 @@
 
 # AQAR Real Estate Exchange
 
-AQAR Real Estate Exchange is the capstone project for Udacity's Blockchain course. 
+AQAR Token is A Real Estate Exchange contract. 
 
 ## Install
 
